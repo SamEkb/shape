@@ -1,0 +1,2 @@
+# shape
+Java training project
