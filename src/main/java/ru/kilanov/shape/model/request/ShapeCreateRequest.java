@@ -19,10 +19,8 @@ public class ShapeCreateRequest implements Serializable {
     @Max(1000)
     private Integer coordinateY;
     @NotNull
-    @Max(1000)
     private Integer width;
     @NotNull
-    @Max(1000)
     private Integer height;
     @NotBlank
     private String color;
