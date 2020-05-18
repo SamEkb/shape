@@ -1,13 +1,17 @@
 package ru.kilanov.shape.controller;
 
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.kilanov.shape.model.request.ShapeCreateRequest;
 import ru.kilanov.shape.service.ShapeService;
+
+import javax.validation.Valid;
 
 /**
  * Рест сервис работы с прямоугольникми.
  */
 @RestController
+@Validated
 @RequestMapping("rectangle")
 public class ShapeController {
 
@@ -26,7 +30,7 @@ public class ShapeController {
     @PostMapping
     @RequestMapping(value = "/create", produces = "image/jpg")
     public @ResponseBody
-    byte[] create(@RequestBody ShapeCreateRequest rectangleCreateRequest) {
+    byte[] create(@Valid @RequestBody ShapeCreateRequest rectangleCreateRequest) {
         return shapeService.create(rectangleCreateRequest);
     }
 }

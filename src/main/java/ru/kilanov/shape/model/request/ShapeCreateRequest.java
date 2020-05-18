@@ -1,53 +1,60 @@
 package ru.kilanov.shape.model.request;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.Range;
+
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 
 /**
  * Запрос на создание фигуры.
  */
+@Valid
 public class ShapeCreateRequest implements Serializable {
-    @Size(max = 1000)
-    private int coordinateX;
-    @Size(max = 1000)
-    private int coordinateY;
-    @Size(max = 1000)
-    private int coordinateW;
-    @Size(max = 1000)
-    private int coordinateH;
     @NotNull
+    @Max(1000)
+    private Integer coordinateX;
+    @NotNull
+    @Max(1000)
+    private Integer coordinateY;
+    @NotNull
+    @Max(1000)
+    private Integer coordinateW;
+    @NotNull
+    @Max(1000)
+    private Integer coordinateH;
+    @NotBlank
     private String color;
 
-    public int getCoordinateX() {
+    public Integer getCoordinateX() {
         return coordinateX;
     }
 
-    public void setCoordinateX(int coordinateX) {
+    public void setCoordinateX(Integer coordinateX) {
         this.coordinateX = coordinateX;
     }
 
-    public int getCoordinateY() {
+    public Integer getCoordinateY() {
         return coordinateY;
     }
 
-    public void setCoordinateY(int coordinateY) {
+    public void setCoordinateY(Integer coordinateY) {
         this.coordinateY = coordinateY;
     }
 
-    public int getCoordinateW() {
+    public Integer getCoordinateW() {
         return coordinateW;
     }
 
-    public void setCoordinateW(int coordinateW) {
+    public void setCoordinateW(Integer coordinateW) {
         this.coordinateW = coordinateW;
     }
 
-    public int getCoordinateH() {
+    public Integer getCoordinateH() {
         return coordinateH;
     }
 
-    public void setCoordinateH(int coordinateH) {
+    public void setCoordinateH(Integer coordinateH) {
         this.coordinateH = coordinateH;
     }
 
