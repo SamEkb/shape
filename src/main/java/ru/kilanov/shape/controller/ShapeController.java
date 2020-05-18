@@ -7,7 +7,7 @@ import ru.kilanov.shape.service.ShapeService;
 import javax.validation.Valid;
 
 /**
- * Рест сервис работы с прямоугольникми.
+ * Рест сервис работы с прямоугольниками.
  */
 @RestController
 @RequestMapping("rectangle")

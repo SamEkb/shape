@@ -2,9 +2,9 @@
 Java training project
 Query example
 {
-  "coordinateX" : 100,
+ "coordinateX" : 100,
   "coordinateY" : 100,
-  "coordinateW" : 100,
-  "coordinateH" : 300,
+  "width" : 100,
+  "height" : 300,
   "color" : "green"
 }

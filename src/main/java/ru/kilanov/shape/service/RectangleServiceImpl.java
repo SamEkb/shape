@@ -75,8 +75,8 @@ public class RectangleServiceImpl implements ShapeService {
         g2d.clearRect(0, 0, WIDTH, HEIGHT);
 
         g2d.setColor(mapper.mapColor(request.getColor()));
-        g2d.fill(new Rectangle2D.Float(request.getCoordinateX(), request.getCoordinateY(), request.getCoordinateW(),
-                request.getCoordinateH()));
+        g2d.fill(new Rectangle2D.Float(request.getCoordinateX(), request.getCoordinateY(), request.getWidth(),
+                request.getHeight()));
 
         g2d.dispose();
 
@@ -89,8 +89,8 @@ public class RectangleServiceImpl implements ShapeService {
         rectangle.setColor(request.getColor());
         rectangle.setCoordinateX(request.getCoordinateX());
         rectangle.setCoordinateY(request.getCoordinateY());
-        rectangle.setCoordinateH(request.getCoordinateH());
-        rectangle.setCoordinateW(request.getCoordinateW());
+        rectangle.setCoordinateH(request.getHeight());
+        rectangle.setCoordinateW(request.getWidth());
         rectangle.setCreateDate(OffsetDateTime.now());
         rectangle.setResult(result);
 

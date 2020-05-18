@@ -11,7 +11,7 @@ import ru.kilanov.shape.model.request.ShapeCreateRequest;
 public class RectangleValidator {
 
     public void validateRequest(ShapeCreateRequest request) {
-        if (request.getCoordinateH() == request.getCoordinateW()) {
+        if (request.getHeight().equals(request.getWidth())) {
             throw new IllegalFormatException("Не верный формат прямоугольника");
         }
     }
