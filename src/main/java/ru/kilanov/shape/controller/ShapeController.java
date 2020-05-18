@@ -1,6 +1,5 @@
 package ru.kilanov.shape.controller;
 
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.kilanov.shape.model.request.ShapeCreateRequest;
 import ru.kilanov.shape.service.ShapeService;
@@ -11,7 +10,6 @@ import javax.validation.Valid;
  * Рест сервис работы с прямоугольникми.
  */
 @RestController
-@Validated
 @RequestMapping("rectangle")
 public class ShapeController {
 

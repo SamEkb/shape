@@ -1,9 +1,9 @@
 package ru.kilanov.shape.model.request;
 
-import org.hibernate.validator.constraints.Range;
-
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
