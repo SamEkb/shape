@@ -12,16 +12,36 @@ import java.util.Objects;
  */
 @Valid
 public class ShapeCreateRequest implements Serializable {
+
+    /**
+     * Координаты оси Х
+     */
     @NotNull
     @Max(1000)
     private Integer coordinateX;
+
+    /**
+     * Координаты оси Y
+     */
     @NotNull
     @Max(1000)
     private Integer coordinateY;
+
+    /**
+     * Ширина
+     */
     @NotNull
     private Integer width;
+
+    /**
+     * Высота
+     */
     @NotNull
     private Integer height;
+
+    /**
+     * Цвет
+     */
     @NotBlank
     private String color;
 

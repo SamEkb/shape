@@ -6,19 +6,23 @@ import ru.kilanov.shape.exception.RectangleOutOfBoundException;
 import ru.kilanov.shape.model.request.ShapeCreateRequest;
 
 /**
- * Валидация прямоугольника.
+ * Валидация запроса на создание прямоугольника.
  */
 @Component
 public class RectangleValidator {
 
+    private static final String ILLEGAL_FORMAT = "Не верный формат прямоугольника";
+    private static final String OUT_OF_BOUND = "Выход за границы площади размещения прямоугольника";
+    private static final int SIZE = 1000;
+
     public void validateRequest(ShapeCreateRequest request) {
         if (request.getHeight().equals(request.getWidth())) {
-            throw new IllegalFormatException("Не верный формат прямоугольника");
+            throw new IllegalFormatException(ILLEGAL_FORMAT);
         }
 
-        if (request.getHeight() + request.getCoordinateY() > 1000
-                || request.getWidth() + request.getCoordinateX() > 1000) {
-            throw new RectangleOutOfBoundException("Выход за границы площади размещения прямоугольника");
+        if (request.getHeight() + request.getCoordinateY() > SIZE
+                || request.getWidth() + request.getCoordinateX() > SIZE) {
+            throw new RectangleOutOfBoundException(OUT_OF_BOUND);
         }
     }
 }

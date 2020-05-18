@@ -8,14 +8,45 @@ import java.util.Objects;
  * Сущность прямоугольник.
  */
 public class Rectangle {
+    /**
+     * Идентефикатор
+     */
     private int id;
+
+    /**
+     * Координаты оси Х
+     */
     private int coordinateX;
+
+    /**
+     * Координаты оси Y
+     */
     private int coordinateY;
+
+    /**
+     * Ширина
+     */
     private int coordinateW;
+
+    /**
+     * Высота
+     */
     private int coordinateH;
+
+    /**
+     * Цвет
+     */
     private String color;
+
+    /**
+     * Время создания
+     */
     private OffsetDateTime createDate;
-    byte[] result;
+
+    /**
+     * Изображение
+     */
+    private byte[] result;
 
     public int getId() {
         return id;

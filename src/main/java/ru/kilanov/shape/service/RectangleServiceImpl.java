@@ -19,9 +19,9 @@ import java.util.List;
 @Service
 public class RectangleServiceImpl implements ShapeService {
 
-    private static final int WIDTH = 1000;
-    private static final int HEIGHT = 1000;
+    private static final int SIZE = 1000;
     private static final String JPG = "jpg";
+    private static final int NULL = 0;
 
     private List<Rectangle> rectangles = new ArrayList<>();
     private int index = 1;
@@ -65,14 +65,14 @@ public class RectangleServiceImpl implements ShapeService {
                 )
                 .map(Rectangle::getId)
                 .reduce((first, second) -> second)
-                .orElse(0);
+                .orElse(NULL);
     }
 
     private BufferedImage createImage(ShapeCreateRequest request) {
-        BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+        BufferedImage image = new BufferedImage(SIZE, SIZE, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2d = (Graphics2D) image.getGraphics();
         g2d.setBackground(Color.WHITE);
-        g2d.clearRect(0, 0, WIDTH, HEIGHT);
+        g2d.clearRect(NULL, NULL, SIZE, SIZE);
 
         g2d.setColor(mapper.mapColor(request.getColor()));
         g2d.fill(new Rectangle2D.Float(request.getCoordinateX(), request.getCoordinateY(), request.getWidth(),

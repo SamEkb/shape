@@ -5,8 +5,13 @@ import ru.kilanov.shape.exception.ColorNotFoundException;
 
 import java.awt.*;
 
+/**
+ * Маппер цвета фигуры.
+ */
 @Component
 public class ColorMapper {
+
+    private static final String COLOR_NOT_FOUND = "Цвет не найден";
 
     public Color mapColor(String color) {
         Color result;
@@ -45,7 +50,7 @@ public class ColorMapper {
                 result = Color.ORANGE;
                 break;
             default:
-                throw new ColorNotFoundException("Цвет не найден");
+                throw new ColorNotFoundException(COLOR_NOT_FOUND);
         }
         return result;
     }
